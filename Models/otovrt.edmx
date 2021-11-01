@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="otovrtModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="bilet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="guzergahid" Type="int" />
+          <Property Name="guzergahadi" Type="nvarchar" MaxLength="50" />
+          <Property Name="koltukno" Type="int" />
+          <Property Name="ucret" Type="float" />
+          <Property Name="kad" Type="nvarchar" MaxLength="50" />
+          <Property Name="ksoyad" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="guzergah">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="guzergahad" Type="nvarchar" MaxLength="50" />
+          <Property Name="ucret" Type="float" />
+          <Property Name="bkoltuk" Type="int" />
+          <Property Name="tarih" Type="nvarchar" MaxLength="50" />
+          <Property Name="saat" Type="nvarchar" MaxLength="50" />
+          <Property Name="zamsay" Type="int" />
+        </EntityType>
+        <EntityType Name="kullanici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="mail" Type="nvarchar(max)" />
+          <Property Name="sifre" Type="nchar" MaxLength="10" />
+          <Property Name="ydurum" Type="int" />
+        </EntityType>
+        <EntityContainer Name="otovrtModelStoreContainer">
+          <EntitySet Name="bilet" EntityType="Self.bilet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="guzergah" EntityType="Self.guzergah" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kullanici" EntityType="Self.kullanici" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="otovrtModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="bilet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="guzergahid" Type="Int32" />
+          <Property Name="guzergahadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="koltukno" Type="Int32" />
+          <Property Name="ucret" Type="Double" />
+          <Property Name="kad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ksoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="guzergah">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="guzergahad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ucret" Type="Double" />
+          <Property Name="bkoltuk" Type="Int32" />
+          <Property Name="tarih" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="saat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="zamsay" Type="Int32" />
+        </EntityType>
+        <EntityType Name="kullanici">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sifre" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ydurum" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="otovrtEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bilet" EntityType="Self.bilet" />
+          <EntitySet Name="guzergah" EntityType="Self.guzergah" />
+          <EntitySet Name="kullanici" EntityType="Self.kullanici" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="otovrtModelStoreContainer" CdmEntityContainer="otovrtEntities">
+          <EntitySetMapping Name="bilet">
+            <EntityTypeMapping TypeName="otovrtModel.bilet">
+              <MappingFragment StoreEntitySet="bilet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="guzergahid" ColumnName="guzergahid" />
+                <ScalarProperty Name="guzergahadi" ColumnName="guzergahadi" />
+                <ScalarProperty Name="koltukno" ColumnName="koltukno" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+                <ScalarProperty Name="kad" ColumnName="kad" />
+                <ScalarProperty Name="ksoyad" ColumnName="ksoyad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="guzergah">
+            <EntityTypeMapping TypeName="otovrtModel.guzergah">
+              <MappingFragment StoreEntitySet="guzergah">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="guzergahad" ColumnName="guzergahad" />
+                <ScalarProperty Name="ucret" ColumnName="ucret" />
+                <ScalarProperty Name="bkoltuk" ColumnName="bkoltuk" />
+                <ScalarProperty Name="tarih" ColumnName="tarih" />
+                <ScalarProperty Name="saat" ColumnName="saat" />
+                <ScalarProperty Name="zamsay" ColumnName="zamsay" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kullanici">
+            <EntityTypeMapping TypeName="otovrtModel.kullanici">
+              <MappingFragment StoreEntitySet="kullanici">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+                <ScalarProperty Name="sifre" ColumnName="sifre" />
+                <ScalarProperty Name="ydurum" ColumnName="ydurum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

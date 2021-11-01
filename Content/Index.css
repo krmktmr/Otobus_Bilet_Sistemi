@@ -1,0 +1,48 @@
+﻿.index * {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.index h2 {
+    text-align:center;
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: red;
+    padding: 30px 0;
+}
+
+.index .table-wrapper {
+    margin: 10px 70px 70px;
+    box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
+}
+
+.index .fl-table {
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: normal;
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: white;
+}
+
+    .index .fl-table td, .fl-table th {
+        border: 1px solid black;
+        text-align: center;
+        padding: 8px;
+    }
+
+    .index .fl-table td {
+        font-size: 12px;
+    }
+
+    .index .fl-table thead th {
+        color: #ffffff;
+        background: #324960;
+    }
+
+

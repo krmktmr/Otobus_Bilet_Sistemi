@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Bilet Sistemi";
+    Layout = null;
+}
+
+<link href="~/Content/kullanicig.css" rel="stylesheet" />
+<div class="wrapper">
+    <div class="container">
+        <h1>Giriş Yapınız</h1>
+        <form class="form" action="/Users/Giris" method="post">
+            <input type="email" placeholder="E-Mail" name="mail">
+            <input type="password" placeholder="Şifre" name="sifre">
+            <button type="submit" id="login-button">Giriş</button><br />
+        </form>
+
+        <a href="/Users/Kayitol" >Kayıt Ol</a><br />
+
+        @if (@ViewBag.Mesaj != null)
+        {<p style="color:red !important;">
+                @ViewBag.Mesaj
+            </p>
+        }
+    </div>
+
+</div>

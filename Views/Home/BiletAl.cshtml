@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Bilet Sistemi";
+}
+@model Projek.Models.bilet
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Index.css" rel="stylesheet" />
+<form class="form-group" method="post">
+    <div class="container index">
+        <h2>Bilet Satış</h2>
+        <div class="table-wrapper">
+            <table class="fl-table">
+                <thead>
+                    <tr>
+                        <th>Kişi Adı</th>
+                        <th>Kişi Soyadı</th>
+                        <th>Boş Koltuklar</th>
+                        <th colspan="2">Bilet Ücreti</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Html.TextBoxFor(x => x.kad, new { @class = "form-control" })</td>
+                        <td>@Html.TextBoxFor(x => x.ksoyad, new { @class = "form-control" })</td>
+                        <td>@Html.DropDownListFor(x => x.koltukno, (List<SelectListItem>)ViewBag.bskoltuk, new { @class = "form-control" })@ViewBag.koltukdurum</td>
+                        <td>@ViewBag.ucret</td>
+                        <td><button class="btn btn-info">Satın Al</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="5"><a href="/Home/Biletler" class="btn bg-success">Geri Dön</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>

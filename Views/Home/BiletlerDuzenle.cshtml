@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "Bilet Sistemi";
+
+}
+
+@using Projek.Models
+@model List<bilet>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/Index.css" rel="stylesheet" />
+<div class="container index">
+    <h2>Bilet Kontrol</h2>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>Kişi Adı Soyadı</th>
+                    <th>Güzergah</th>
+                    <th>Ücret</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @{
+                    foreach (var x in Model)
+                    {
+
+                                <tr>
+                                    <td>@x.kad @x.ksoyad</td>
+                                    <td>@x.guzergahadi</td>
+                                    <td>@x.ucret</td>
+                                    <td><a href="/Home/BiletSil/@x.id" class="btn btn-danger">Sil</a></td>
+                                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
